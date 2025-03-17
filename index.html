@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaPixel - Hem</title>
     <link rel="stylesheet" href="CSS/styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
-    <div class="header-container">
-        <img src="Media/NPlogo.webp" alt="NovaPixel Logotyp" class="logo">
-        <nav class="navbar">
-            <a href="#">Hem</a>
-            <a href="about.html">Om oss</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="contact.html">Kontakt</a>
-        </nav>
-    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("navBar.html");
+        });
+    </script>
+    <!--end of Navigation bar-->
 
     <header class="title">
         <h1>NovaPixel – Där Design Möter Innovation!</h1>
