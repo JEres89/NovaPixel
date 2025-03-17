@@ -1,0 +1,27 @@
+.carousel {
+	width: 300px;
+	display: flex;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	scroll-snap-type: x mandatory;
+	/*scroll-snap-stop: always;*/
+
+}
+
+	.carousel > div {
+		scroll-snap-stop: always;
+		scroll-snap-align: center;
+		flex-shrink: 0;
+		width: 300px;
+		height: 300px;
+	}
+
+#case1 {
+	background-color: red;
+}
+#case2 {
+	background-color: green;
+}
+#case3 {
+	background-color: blue;
+}
