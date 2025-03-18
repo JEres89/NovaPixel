@@ -8,7 +8,7 @@ body {
 
 .header-container {
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: space-between;
     padding: 15px 30px;
 }
@@ -27,8 +27,10 @@ body {
 .navbar {
     display: flex;
     justify-content: flex-end;
+    max-height: 40px;
     padding: 15px;
-    background: linear-gradient(90deg, #FF53FF, #B544F8, #9152FF, #4873A0);
+    background: linear-gradient(90deg, #4873A0, #9152FF, #B544F8, #FF53FF);
+    width: 100%;
 }
 
 .navbar a {
