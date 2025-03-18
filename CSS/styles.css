@@ -10,11 +10,13 @@ body {
     display: flex;
     align-items: top;
     justify-content: space-between;
-    padding: 15px 30px;
 }
 
 .logo {
-    height: 300px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px; 
 }
 
 .site-title {
@@ -62,12 +64,12 @@ body {
 /* Responsiv design */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
     }
 
     .logo {
-        height: 30px;
+        height: 60px;
         margin-bottom: 10px;
     }
 
