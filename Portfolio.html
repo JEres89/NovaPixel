@@ -8,20 +8,29 @@
 </head>
 <body>
 
-    <div class="carousel">
-        <div id="case1">
-
-        </div>
-        <div id="case2">
-
-        </div>
-        <div id="case3">
-
-        </div>
-        <div id="case4">
-
-        </div>
-
+    <div id="carousel">
+		<ol>
+			<!--<li id="leftcase">
+			</li>-->
+			<li id="case1" class="carousel_case">
+				<a href="#case4" class="carousel_prev">Go to last slide</a>
+				<a href="#case2" class="carousel_next">Go to next slide</a>
+			</li>
+			<li id="case2" class="carousel_case">
+				<a href="#case1" class="carousel_prev">Go to last slide</a>
+				<a href="#case3" class="carousel_next">Go to next slide</a>
+			</li>
+			<li id="case3" class="carousel_case">
+				<a href="#case2" class="carousel_prev">Go to last slide</a>
+				<a href="#case4" class="carousel_next">Go to next slide</a>
+			</li>
+			<li id="case4" class="carousel_case">
+				<a href="#case3" class="carousel_prev">Go to last slide</a>
+				<a href="#case1" class="carousel_next">Go to next slide</a>
+			</li>
+			<!--<li id="rightcase">
+			</li>-->
+		</ol>
     </div>
 </body>
 </html>
