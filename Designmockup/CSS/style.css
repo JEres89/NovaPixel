@@ -1,0 +1,184 @@
+/* =============================
+   NovaPixel - Styling för Webbsidan
+   ============================= */
+
+/* Grundläggande styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('../Media/background3.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 25px; /* Justera detta värde för att flytta ner navbaren */
+    padding: 10px;
+    background: linear-gradient(90deg, #3F6488, #456D92, #C25BB2, #C95CB7);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #4873A0; /* Elektrisk blå vid hover */
+    text-shadow: 0px 0px 10px #456D92;
+}
+
+/* Logotypen ovanpå navbar till vänster */
+.logo {
+    position: absolute;
+    left: 15px;
+    top: -5px; /* Flyttar ner logotypen så att den inte ligger för högt */
+    max-width: 200px; /* Ökar storleken för bättre synlighet */
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+    z-index: 2;
+}
+
+/* Hero-sektion */
+.hero {
+    position: absolute;
+    top: 350px; /* Justeras för att matcha bakgrundens text */
+    left: 52%;
+    transform: translateX(-50%);
+    width: 400px; /* Minskar bredden på bakgrunden */
+    background: rgba(35, 41, 46, 0.7); /* Förstärkt svart genomskinlig bakgrund */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap');
+
+.hero h1 {
+    font-family: 'Barlow', sans-serif; 
+    font-size: 42px;
+    font-weight: lighter;
+    color: #FFFFFF;
+    text-shadow: 0px 0px 15px rgba(35, 41, 46, 0.7);
+    text-align: center;
+    display: block;
+    margin: 0 auto 10px;
+    margin-bottom: 15px;
+}
+
+/* Underrubrik i rutan under bakgrundens text */
+.hero p {
+    font-size: 20px;
+    font-style: italic;
+    color: #B75AAB;
+    text-shadow: 0px 0px 10px #872D62;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Content sektion förbättrad */
+.content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    max-width: 400px;
+    text-align: left;
+    font-family: 'Lato', sans-serif; /* Lämpligt teckensnitt för content */
+    background: rgba(35, 41, 46, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Justering av sektionstitlar */
+h2 {
+    font-size: 24px;
+    color: #406488;
+    border-bottom: 2px solid #C25BB2;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Knappar */
+.btn {
+    background: #3F6080;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 10px #456D92;
+}
+
+.btn:hover {
+    background: #C95CB7;
+    box-shadow: 0px 0px 15px #C25BB2;
+}
+
+/* Länkar */
+a {
+    color: #B75AAB;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+    color: #4873A0;
+    text-shadow: 0px 0px 10px #872D62;
+}
+
+/* ===== RESPONSIV DESIGN ===== */
+
+/* För surfplattor (mellan 768px och 1024px) */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero {
+        width: 80%;
+        top: 300px;
+    }
+    .hero h1 {
+        font-size: 36px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+}
+
+/* För mobiler (max 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .hero {
+        width: 90%;
+        top: 280px;
+    }
+    .hero h1 {
+        font-size: 30px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    .content {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        max-width: 90%;
+        text-align: center;
+    }
+}
