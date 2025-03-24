@@ -12,6 +12,15 @@ body {
     text-align: center;
 }
 
+.contactBody {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('../Media/bakgrund2r.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
 /* Navbar */
 .navbar {
     display: flex;
