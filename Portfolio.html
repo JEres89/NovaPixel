@@ -2,19 +2,38 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
-	<link rel="stylesheet" type="text/css" href="carousel.css" />
+	<meta charset="utf-8" />
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NovaPixel - Portfolio</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link rel="stylesheet" type="text/css" href="css/carousel.css" />
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
+	<!--Navigation bar-->
+	<div id="nav-placeholder"></div>
+	<script>
+      $(function(){
+        $("#nav-placeholder").load("navBar.html");
+      });
+	</script>
+	<!--end of Navigation bar-->
 
-    <div id="carousel">
+	<div id="carousel">
 		<ol>
 			<!--<li id="leftcase">
 			</li>-->
 			<li id="case1" class="carousel_case">
 				<a href="#case4" class="carousel_prev">Go to last slide</a>
 				<a href="#case2" class="carousel_next">Go to next slide</a>
+				<div>
+					<img src="./Media/logo.png" alt="Project 1" />
+					<article>
+						<h2>Project 1</h2>
+						<p>Project description</p>
+					</article>
+				</div>
 			</li>
 			<li id="case2" class="carousel_case">
 				<a href="#case1" class="carousel_prev">Go to last slide</a>
@@ -31,6 +50,6 @@
 			<!--<li id="rightcase">
 			</li>-->
 		</ol>
-    </div>
+	</div>
 </body>
 </html>
