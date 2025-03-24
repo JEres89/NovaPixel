@@ -3,7 +3,6 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8" />
-	<title></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>NovaPixel - Portfolio</title>
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
@@ -12,20 +11,50 @@
 </head>
 <body>
 	<!--Navigation bar-->
-	<div id="nav-placeholder"></div>
-	<script>
-      $(function(){
-        $("#nav-placeholder").load("navBar.html");
-      });
-	</script>
+	<div class="header-container">
+		<a href="#"><img src="./Media/logo.png" alt="NovaPixel Logotyp" class="logo"></a>
+		<nav class="navbar">
+			<a href="#">Hem</a>
+			<a href="./about.html">Om oss</a>
+			<a href="./portfolio.html">Portfolio</a>
+			<a href="./contact.html">Kontakt</a>
+		</nav>
+	</div>
+	<!--<div id="nav-placeholder"></div>-->
+	<!--<script>
+		$(function () {
+			$("#nav-placeholder").load("navBar.html");
+		});
+	</script>-->
 	<!--end of Navigation bar-->
 
 	<div id="carousel">
 		<ol>
 			<!--<li id="leftcase">
 			</li>-->
-			<li id="case1" class="carousel_case">
+			<li id="case0" class="carousel_case" style="display: flex;flex-direction: column;flex-wrap: nowrap;">
 				<a href="#case4" class="carousel_prev">Go to last slide</a>
+				<a href="#case1" class="carousel_next">Go to next slide</a>
+				<div style="/* height: 50%; *//* position: relative; */flex: 1 1 50%;min-height: 200px;">
+					<img src="./Media/logo.png" alt="Project 1" style="height: 100%;/* position: relative; *//* flex: 0 0 50%; *//* min-height: 50%; ">
+				</div>
+				<article style="padding: 2rem 4rem;overflow: auto;/* height: 50%; */flex: 50%;">
+					<h2>Välkommen till NovaPixel</h2>
+					<p>En webbyrå där kreativitet, teknik och e-handel samlas för att skapa framtidens digitala upplevelser.</p>
+					<p>Vi är KAJ; Kristina, Andreas och Jens, tre passionerade designers och utvecklare som brinner för att bygga snygga, smarta och användarvänliga webbplatser.</p>
+					<h2>Project 2</h2>
+					<ul style="list-style-type: none; padding: 0;">
+						<li><strong>🔹 Design som engagerar</strong> – Vi skapar visuellt slående och intuitiva webbupplevelser.</li>
+						<li><strong>🔹 E-handel som presterar</strong> – Sömlösa och skalbara lösningar för din butik online.</li>
+						<li><strong>🔹 Teknik som imponerar</strong> – Framtidssäkra plattformar som optimeras för prestanda och konvertering.</li>
+					</ul>
+					<h2>Project 3</h2>
+					<p>Project description</p>
+					<p>Project description</p>
+				</article>
+			</li>
+			<li id="case1" class="carousel_case">
+				<a href="#case0" class="carousel_prev">Go to last slide</a>
 				<a href="#case2" class="carousel_next">Go to next slide</a>
 				<div>
 					<img src="./Media/logo.png" alt="Project 1" />
@@ -45,7 +74,7 @@
 			</li>
 			<li id="case4" class="carousel_case">
 				<a href="#case3" class="carousel_prev">Go to last slide</a>
-				<a href="#case1" class="carousel_next">Go to next slide</a>
+				<a href="#case0" class="carousel_next">Go to next slide</a>
 			</li>
 			<!--<li id="rightcase">
 			</li>-->
