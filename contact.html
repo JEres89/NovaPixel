@@ -6,22 +6,119 @@
     <title>Contact us</title>
     <link rel="stylesheet" href="CSS/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <!-- <style>
+      .body {
+        background-color: white;
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+      }
+      .container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            text-align: left;
+            margin-top: 10px;
+            align-self: flex-start;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 15px;
+            background-color: #0073b1;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005582;
+        }
+        .linkedin-links {
+            margin-top: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #0073b1;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+      
+  </style> -->
 </head>
-<body class="contactBody"
-    <!--Navigation bar-->
-    <div id="nav-placeholder"></div>
-    <script>
-        $(function () {
-            $("#nav-placeholder").load("navBar.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-    <div style="max-width: fit-content; margin-top: 14vh; margin-left: 38vw;">
+<body>
+<!--Navigation bar-->
+<div id="nav-placeholder"></div>
+<script>
+    $(function(){
+      $("#nav-placeholder").load("navBar.html");
+    });
+</script>
+<!--end of Navigation bar-->
+
+    <!-- <div style="max-width: fit-content; margin-top: 14vh; margin-left: 38vw;">
         <form style="background-color: #C25BB2; opacity: 50%;">
             <label for="lname">Hör av dig till oss!</label><br>
             <input type="text" id="lname" name="lname">
             <input type="submit" value="Submit">
         </form>
-    </div>
+    </div> -->
+    <div class="body.contact">
+    <div class="container.contact">
+      <div>
+      <h2>Contact Us</h2>
+      <form class="" action="#" method="post">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          
+          <button type="submit">Send Message</button>
+      </form>
+      
+      <div class="linkedin-links">
+          <h3>Connect with us</h3>
+          <ul>
+              <li><a href="#" target="_blank">LinkedIn Profile 1</a></li>
+              <li><a href="#" target="_blank">LinkedIn Profile 2</a></li>
+              <li><a href="#" target="_blank">LinkedIn Profile 3</a></li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>
 </body>
 </html>
