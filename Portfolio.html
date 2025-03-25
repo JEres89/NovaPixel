@@ -11,34 +11,25 @@
 </head>
 <body>
 	<!--Navigation bar-->
-	<div class="header-container">
-		<a href="#"><img src="./Media/logo.png" alt="NovaPixel Logotyp" class="logo"></a>
-		<nav class="navbar">
-			<a href="#">Hem</a>
-			<a href="./about.html">Om oss</a>
-			<a href="./portfolio.html">Portfolio</a>
-			<a href="./contact.html">Kontakt</a>
-		</nav>
-	</div>
-	<!--<div id="nav-placeholder"></div>-->
-	<!--<script>
+	<div id="nav-placeholder"></div>
+	<script>
 		$(function () {
 			$("#nav-placeholder").load("navBar.html");
 		});
-	</script>-->
+	</script>
 	<!--end of Navigation bar-->
 
 	<div id="carousel">
 		<ol>
 			<!--<li id="leftcase">
 			</li>-->
-			<li id="case0" class="carousel_case" style="display: flex;flex-direction: column;flex-wrap: nowrap;">
+			<li id="case0" class="carousel_case">
 				<a href="#case4" class="carousel_prev">Go to last slide</a>
 				<a href="#case1" class="carousel_next">Go to next slide</a>
-				<div style="/* height: 50%; *//* position: relative; */flex: 1 1 50%;min-height: 200px;">
-					<img src="./Media/logo.png" alt="Project 1" style="height: 100%;/* position: relative; *//* flex: 0 0 50%; *//* min-height: 50%; ">
+				<div>
+					<img src="./Media/logo.png" alt="Project 1">
 				</div>
-				<article style="padding: 2rem 4rem;overflow: auto;/* height: 50%; */flex: 50%;">
+				<article>
 					<h2>Välkommen till NovaPixel</h2>
 					<p>En webbyrå där kreativitet, teknik och e-handel samlas för att skapa framtidens digitala upplevelser.</p>
 					<p>Vi är KAJ; Kristina, Andreas och Jens, tre passionerade designers och utvecklare som brinner för att bygga snygga, smarta och användarvänliga webbplatser.</p>
@@ -58,11 +49,11 @@
 				<a href="#case2" class="carousel_next">Go to next slide</a>
 				<div>
 					<img src="./Media/logo.png" alt="Project 1" />
-					<article>
-						<h2>Project 1</h2>
-						<p>Project description</p>
-					</article>
 				</div>
+				<article>
+					<h2>Project 1</h2>
+					<p>Project description</p>
+				</article>
 			</li>
 			<li id="case2" class="carousel_case">
 				<a href="#case1" class="carousel_prev">Go to last slide</a>
