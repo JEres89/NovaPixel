@@ -1,0 +1,60 @@
+/* =============================
+   NovaPixel - Karusell Designstil
+   ============================= */
+
+/* Grundstil för alla slides */
+.carousel_case {
+    scroll-snap-stop: always;
+    scroll-snap-align: center;
+    margin: 0 2rem;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    flex: 0 0 calc(100% - 4rem);
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+  }
+  
+  /* Slide 1 - Samma färg som content på index & team-box */
+  #case0 {
+    background: rgba(25, 28, 32, 0.75);
+  }
+  
+  /* Övriga slides i NovaPixel färgskala med samma transparens */
+  #case1 {
+    background: rgba(197, 92, 183, 0.5); /* Neonrosa */
+  }
+  
+  #case2 {
+    background: rgba(63, 100, 136, 0.5); /* Blågrå */
+  }
+  
+  #case3 {
+    background: rgba(93, 220, 255, 0.5); /* Turkos/ljusblå */
+  }
+  
+  #case4 {
+    background: rgba(183, 90, 171, 0.5); /* Rosa/lila mix */
+  }
+  
+  /* Pilar - uppdaterad outlinefärg i NovaPixel-stil */
+  .carousel_prev,
+  .carousel_next {
+    outline: 2px solid #C25BB2; /* Neonrosa rund kant */
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .carousel_prev:hover,
+  .carousel_next:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px #C25BB2;
+  }
+  
