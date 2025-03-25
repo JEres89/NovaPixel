@@ -2,29 +2,30 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Om oss – NovaPixel</title>
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/style.css" />
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body class="about">
-  <!-- Navigation -->
-  <a href="index.html"><img src="./Media/logo.png" alt="NovaPixel Logo" class="logo"></a>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <div class="navbar" id="navbar">
-    <a href="index.html">Hem</a>
-    <a href="about.html">Om oss</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Kontakt</a>
-  </div>
+  <!-- Navigation bar -->
+  <div id="nav-placeholder"></div>
+  <script>
+    $(function () {
+      $("#nav-placeholder").load("navBar.html");
+    });
+  </script>
+  <!-- End of Navigation bar -->
 
   <!-- Teammedlemmar -->
   <section class="team-box">
     <div class="member">
-      <img src="./Media/kristina.webp" alt="Kristina">
+      <img src="./Media/kristina.webp" alt="Kristina" />
       <div class="member-info">
-        <p>Kristina är fullstackutvecklare med ett skarpt öga för färg, form och användarupplevelse. Hon kombinerar teknisk kompetens med en stark känsla för struktur, kreativitet och tydlig kommunikation – alltid med användaren i fokus.</p>
+        <p>
+          Kristina är fullstackutvecklare med ett skarpt öga för färg, form och användarupplevelse. Hon kombinerar teknisk kompetens med en stark känsla för struktur, kreativitet och tydlig kommunikation – alltid med användaren i fokus.
+        </p>
         <div class="button-links">
           <button class="btn small-btn" onclick="openCv('kristina')">📄 CV</button>
           <a href="https://www.linkedin.com/in/tinalagesson55/" target="_blank"><span class="linkedin-text">🔗 LinkedIn</span></a>
@@ -33,9 +34,11 @@
     </div>
 
     <div class="member">
-      <img src="./Media/andreas.webp" alt="Andreas">
+      <img src="./Media/andreas.webp" alt="Andreas" />
       <div class="member-info">
-        <p>Andreas är teknisk utvecklare med stor passion för kodkvalitet, struktur och innovation. Han älskar att nörda ner sig i smarta lösningar och bygga robusta system med framtiden i åtanke. Han drivs av nyfikenhet och har alltid ett öga för prestanda och säkerhet.</p>
+        <p>
+          Andreas är teknisk utvecklare med stor passion för kodkvalitet, struktur och innovation. Han älskar att nörda ner sig i smarta lösningar och bygga robusta system med framtiden i åtanke. Han drivs av nyfikenhet och har alltid ett öga för prestanda och säkerhet.
+        </p>
         <div class="button-links">
           <button class="btn small-btn" onclick="openCv('andreas')">📄 CV</button>
           <a href="https://www.linkedin.com/in/andreas-lind-sahlin-ab332460/" target="_blank"><span class="linkedin-text">🔗 LinkedIn</span></a>
@@ -44,9 +47,11 @@
     </div>
 
     <div class="member">
-      <img src="./Media/jens.webp" alt="Jens">
+      <img src="./Media/jens.webp" alt="Jens" />
       <div class="member-info">
-        <p>Jens är backendspecialist och problemlösare som inte ger upp förrän varje funktion är optimerad och varje bug fixad. Med sin tekniska skärpa är han en klippa i alla typer av projekt. Han gillar att tänka långsiktigt och säkrar lösningar för framtida behov.</p>
+        <p>
+          Jens är backendspecialist och problemlösare som inte ger upp förrän varje funktion är optimerad och varje bug fixad. Med sin tekniska skärpa är han en klippa i alla typer av projekt. Han gillar att tänka långsiktigt och säkrar lösningar för framtida behov.
+        </p>
         <div class="button-links">
           <button class="btn small-btn" onclick="openCv('jens')">📄 CV</button>
           <a href="https://www.linkedin.com/in/jens-eresund-958654163/" target="_blank"><span class="linkedin-text">🔗 LinkedIn</span></a>
@@ -77,9 +82,6 @@
     }
     function closeCv(name) {
       document.getElementById(`cv-${name}`).style.display = 'none';
-    }
-    function toggleMenu() {
-      document.getElementById("navbar").classList.toggle("active");
     }
   </script>
 </body>
