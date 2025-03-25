@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om oss – NovaPixel</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body class="about">
+  <!--Navigation bar-->
+  <div id="nav-placeholder"></div>
+  <script>
+    $(function(){
+      $("#nav-placeholder").load("navBar.html");
+    });
+  </script>
+  <!--end of Navigation bar-->
+
+  <!-- Teammedlemmar -->
+  <section class="team-box">
+    <div class="member">
+      <img src="./Media/kristina.webp" alt="Kristina">
+      <div class="member-info">
+        <p>Kristina är fullstackutvecklare med ett skarpt öga för färg, form och användarupplevelse. Hon kombinerar teknisk kompetens med en stark känsla för struktur, kreativitet och tydlig kommunikation – alltid med användaren i fokus.</p>
+        <a href="#" onclick="openCv('kristina')">📄 CV</a>
+        <a href="https://www.linkedin.com/in/kristinalagesson" target="_blank">🔗 LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="./Media/andreas.webp" alt="Andreas">
+      <div class="member-info">
+        <p>Andreas är teknisk utvecklare med stor passion för kodkvalitet, struktur och innovation. Han älskar att nörda ner sig i smarta lösningar och bygga robusta system med framtiden i åtanke.</p>
+        <a href="#" onclick="openCv('andreas')">📄 CV</a>
+        <a href="https://www.linkedin.com/in/andreas-lind-sahlin-ab332460/" target="_blank">🔗 LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="./Media/jens.webp" alt="Jens">
+      <div class="member-info">
+        <p>Jens är backendspecialist och problemlösare som inte ger upp förrän varje funktion är optimerad och varje bug fixad. Med sin tekniska skärpa är han en klippa i alla typer av projekt.</p>
+        <a href="#" onclick="openCv('jens')">📄 CV</a>
+        <a href="https://www.linkedin.com/in/jens-eresund-958654163/" target="_blank">🔗 LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup-fönster för CV -->
+  <div id="cv-kristina" class="cv-popup">
+    <button class="cv-popup-close" onclick="closeCv('kristina')">✕</button>
+    <h2>Kristinas CV</h2>
+    <iframe src="./Media/TinaCV.pdf" width="100%" height="500px"></iframe>
+  </div>
+
+  <div id="cv-andreas" class="cv-popup">
+    <button class="cv-popup-close" onclick="closeCv('andreas')">✕</button>
+    <h2>Andreas CV</h2>
+    <p>Andreas CV som text eller iframe/länk.</p>
+  </div>
+
+  <div id="cv-jens" class="cv-popup">
+    <button class="cv-popup-close" onclick="closeCv('jens')">✕</button>
+    <h2>Jens CV</h2>
+    <p>Jens CV som text eller iframe/länk.</p>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function openCv(name) {
+      document.getElementById(`cv-${name}`).style.display = 'block';
+    }
+    function closeCv(name) {
+      document.getElementById(`cv-${name}`).style.display = 'none';
+    }
+  </script>
+</body>
+</html>
