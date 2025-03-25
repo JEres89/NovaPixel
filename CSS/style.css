@@ -215,7 +215,7 @@
    }
    
    /* ========= SPECIFIKT FÖR ABOUT-SIDAN ========= */
-   body.about {
+   body.alt-background {
        background: url('../Media/bakgrund2.webp') no-repeat center center fixed;
        background-size: cover;
    }

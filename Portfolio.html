@@ -6,7 +6,15 @@
     <title></title>
 	<link rel="stylesheet" type="text/css" href="carousel.css" />
 </head>
-<body>
+<body class="alt-background">
+	<!-- Navigation bar -->
+	<div id="nav-placeholder"></div>
+	<script>
+	  $(function () {
+		$("#nav-placeholder").load("navBar.html");
+	  });
+	</script>
+	<!-- End of Navigation bar -->
 
     <div id="carousel">
 		<ol>
