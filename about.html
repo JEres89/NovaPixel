@@ -1,3 +1,4 @@
+<!-- ABOUT.HTML -->
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -8,14 +9,15 @@
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body class="about">
-  <!--Navigation bar-->
-  <div id="nav-placeholder"></div>
-  <script>
-    $(function(){
-      $("#nav-placeholder").load("navBar.html");
-    });
-  </script>
-  <!--end of Navigation bar-->
+  <!-- Navigation -->
+  <a href="index.html"><img src="./Media/logo.png" alt="NovaPixel Logo" class="logo"></a>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="navbar" id="navbar">
+    <a href="index.html">Hem</a>
+    <a href="about.html">Om oss</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Kontakt</a>
+  </div>
 
   <!-- Teammedlemmar -->
   <section class="team-box">
@@ -23,56 +25,61 @@
       <img src="./Media/kristina.webp" alt="Kristina">
       <div class="member-info">
         <p>Kristina är fullstackutvecklare med ett skarpt öga för färg, form och användarupplevelse. Hon kombinerar teknisk kompetens med en stark känsla för struktur, kreativitet och tydlig kommunikation – alltid med användaren i fokus.</p>
-        <a href="#" onclick="openCv('kristina')">📄 CV</a>
-        <a href="https://www.linkedin.com/in/kristinalagesson" target="_blank">🔗 LinkedIn</a>
+        <div class="button-links">
+          <button class="btn small-btn" onclick="openCv('kristina')">📄 CV</button>
+          <a href="https://www.linkedin.com/in/tinalagesson55/" target="_blank"><span class="linkedin-text">🔗 LinkedIn</span></a>
+        </div>
       </div>
     </div>
 
     <div class="member">
       <img src="./Media/andreas.webp" alt="Andreas">
       <div class="member-info">
-        <p>Andreas är teknisk utvecklare med stor passion för kodkvalitet, struktur och innovation. Han älskar att nörda ner sig i smarta lösningar och bygga robusta system med framtiden i åtanke.</p>
-        <a href="#" onclick="openCv('andreas')">📄 CV</a>
-        <a href="https://www.linkedin.com/in/andreas-lind-sahlin-ab332460/" target="_blank">🔗 LinkedIn</a>
+        <p>Andreas är teknisk utvecklare med stor passion för kodkvalitet, struktur och innovation. Han älskar att nörda ner sig i smarta lösningar och bygga robusta system med framtiden i åtanke. Han drivs av nyfikenhet och har alltid ett öga för prestanda och säkerhet.</p>
+        <div class="button-links">
+          <button class="btn small-btn" onclick="openCv('andreas')">📄 CV</button>
+          <a href="https://www.linkedin.com/in/andreas-lind-sahlin-ab332460/" target="_blank"><span class="linkedin-text">🔗 LinkedIn</span></a>
+        </div>
       </div>
     </div>
 
     <div class="member">
       <img src="./Media/jens.webp" alt="Jens">
       <div class="member-info">
-        <p>Jens är backendspecialist och problemlösare som inte ger upp förrän varje funktion är optimerad och varje bug fixad. Med sin tekniska skärpa är han en klippa i alla typer av projekt.</p>
-        <a href="#" onclick="openCv('jens')">📄 CV</a>
-        <a href="https://www.linkedin.com/in/jens-eresund-958654163/" target="_blank">🔗 LinkedIn</a>
+        <p>Jens är backendspecialist och problemlösare som inte ger upp förrän varje funktion är optimerad och varje bug fixad. Med sin tekniska skärpa är han en klippa i alla typer av projekt. Han gillar att tänka långsiktigt och säkrar lösningar för framtida behov.</p>
+        <div class="button-links">
+          <button class="btn small-btn" onclick="openCv('jens')">📄 CV</button>
+          <a href="https://www.linkedin.com/in/jens-eresund-958654163/" target="_blank"><span class="linkedin-text">🔗 LinkedIn</span></a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Popup-fönster för CV -->
   <div id="cv-kristina" class="cv-popup">
-    <button class="cv-popup-close" onclick="closeCv('kristina')">✕</button>
-    <h2>Kristinas CV</h2>
-    <iframe src="./Media/TinaCV.pdf" width="100%" height="500px"></iframe>
+    <button class="cv-popup-close" onclick="closeCv('kristina')">&times;</button>
+    <iframe src="./Media/TinaCV.pdf"></iframe>
   </div>
 
   <div id="cv-andreas" class="cv-popup">
-    <button class="cv-popup-close" onclick="closeCv('andreas')">✕</button>
-    <h2>Andreas CV</h2>
-    <p>Andreas CV som text eller iframe/länk.</p>
+    <button class="cv-popup-close" onclick="closeCv('andreas')">&times;</button>
+    <iframe src="./Media/AndreasCV.pdf"></iframe>
   </div>
 
   <div id="cv-jens" class="cv-popup">
-    <button class="cv-popup-close" onclick="closeCv('jens')">✕</button>
-    <h2>Jens CV</h2>
-    <p>Jens CV som text eller iframe/länk.</p>
+    <button class="cv-popup-close" onclick="closeCv('jens')">&times;</button>
+    <iframe src="./Media/JensCV.pdf"></iframe>
   </div>
 
-  <!-- JavaScript -->
   <script>
     function openCv(name) {
       document.getElementById(`cv-${name}`).style.display = 'block';
     }
     function closeCv(name) {
       document.getElementById(`cv-${name}`).style.display = 'none';
+    }
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
     }
   </script>
 </body>
