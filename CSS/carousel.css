@@ -2,140 +2,219 @@
    carousel.css - Karusellens layout, snapping, media queries
    ============================= */
 
-   * {
-    -ms-overflow-style: none;
-    box-sizing: border-box;
+* {
+	-ms-overflow-style: none;
+	box-sizing: border-box;
 }
 
 #carousel {
-    top: 200px;
-    left: 0;
-    right: 0;
-    bottom: 50px;
-    position: absolute;
+	top: 200px;
+	left: 0;
+	right: 0;
+	bottom: 50px;
+	position: absolute;
 }
 
-#carousel > ol {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    position: absolute;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-}
+	#carousel > ol {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		list-style: none;
+		position: absolute;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		scroll-behavior: smooth;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+	}
 
-#carousel::before,
-#carousel::after {
-    content: '';
-    z-index: 1;
-    background-color: rgb(255 255 255 / 50%);
-    background-size: 1.5rem 1.5rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    line-height: 4rem;
-    text-align: center;
-    pointer-events: none;
-    position: absolute;
-    top: 50%;
-    width: 4rem;
-    height: 4rem;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    font-size: 0;
-}
+	#carousel::before,
+	#carousel::after {
+		content: '';
+		z-index: 1;
+		background-color: rgb(255 255 255 / 50%);
+		background-size: 1.5rem 1.5rem;
+		background-repeat: no-repeat;
+		background-position: center center;
+		line-height: 4rem;
+		text-align: center;
+		pointer-events: none;
+		position: absolute;
+		top: 50%;
+		width: 4rem;
+		height: 4rem;
+		transform: translateY(-50%);
+		border-radius: 50%;
+		font-size: 0;
+	}
 
-#carousel::before {
-    left: 2rem;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-}
+	#carousel::before {
+		left: 2rem;
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+	}
 
-#carousel::after {
-    right: 2rem;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-}
+	#carousel::after {
+		right: 2rem;
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+	}
 
 .carousel_prev,
 .carousel_next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    font-size: 0;
-    width: 4rem;
-    height: 4rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	width: 4rem;
+	height: 4rem;
 }
 
 .carousel_prev {
-    left: 0rem;
+	left: 0rem;
 }
 
 .carousel_next {
-    right: 0rem;
+	right: 0rem;
 }
 
 .carousel_case {
-    scroll-snap-stop: always;
-    scroll-snap-align: center;
-    margin: 0 2rem;
-    padding: 0;
-    list-style: none;
-    position: relative;
-    flex: 0 0 calc(100% - 4rem);
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
+	scroll-snap-stop: always;
+	scroll-snap-align: center;
+	margin: 0 2rem;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	flex: 0 0 calc(100% - 4rem);
+	display: flex;
+	flex-wrap: nowrap;
+	overflow: hidden;
 }
 
-.carousel_case > article {
-    overflow: auto;
-}
+	.carousel_case > article {
+		overflow: auto;
+	}
 
 @media (min-width: 1024px) {
-    .carousel_case {
-        flex-direction: row-reverse;
-    }
+	.carousel_case {
+		flex-direction: row-reverse;
+	}
 
-    .carousel_case > article {
-        padding: 2rem 2rem 2rem 5rem;
-        flex: 50%;
-    }
+		.carousel_case > article {
+			text-align: left;
+			padding: 2rem 2rem 2rem 5rem;
+			flex: 50%;
+			margin: auto;
+		}
 
-    .carousel_case > div {
-        max-width: 50%;
-        flex: 1 1 50%;
-    }
+		.carousel_case > div {
+			max-width: 50%;
+			margin: auto;
+			margin-right: 5rem;
+			/*flex: 1 1 50%;*/
+			/*align-self: center;*/
+		}
 
-    .carousel_case > div > img {
-        max-width: 100%;
-        max-height: 50%;
-    }
+			.carousel_case > div > img {
+				max-width: 100%;
+				/*max-height: 50%;*/
+			}
 }
 
 @media (max-width: 1023px) {
-    .carousel_case {
-        flex-direction: column;
-    }
+	.carousel_case {
+		flex-direction: column;
+		padding-top: 1rem;
+	}
 
-    .carousel_case > article {
-        margin: 2rem 1.5rem 1rem 2rem;
-        flex: calc(50% - 3rem);
-    }
+		.carousel_case > article {
+			margin: 2rem 1.5rem 1rem 2rem;
+			flex: calc(50% - 3rem);
+		}
+			.carousel_case > article > h2 {
+				margin-top: 0;
+			}
+			.carousel_case > article > div {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-evenly;
+			}
+				.carousel_case > article > div > p {
+					flex: 0 1 50%;
+				}
 
-    .carousel_case > div {
-        min-height: 200px;
-        flex: 1 1 50%;
-    }
+				.carousel_case > article > div > div {
+					flex: 0 1 40%;
+				}
 
-    .carousel_case > div > img {
-        max-height: 100%;
-        max-width: 100%;
-    }
+					.carousel_case > article > div > div > h3 {
+						margin: -0.5em auto 0 auto;
+						height: 1.5em;
+					}
+					.carousel_case > article > div > div > ul > li {
+						text-align: left;
+						margin-bottom: 0.5rem;
+					}
+
+		.carousel_case > div {
+			min-height: 200px;
+			flex: 1 1 50%;
+		}
+
+			.carousel_case > div > img {
+				max-height: 100%;
+				max-width: 100%;
+			}
+}
+
+/* =============================
+   Färger och stil för karusell
+   ============================= */
+
+.carousel_case {
+	border-radius: 30px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Slide-bakgrunder */
+#case1 {
+	background: rgba(25, 28, 32, 0.75);
+}
+
+#case2 {
+	background: rgba(63, 100, 136, 0.5);
+}
+
+#case3 {
+	background: rgba(197, 92, 183, 0.5);
+}
+
+#case4 {
+	background: rgba(93, 220, 255, 0.5);
+}
+
+#case5 {
+	background: rgba(183, 90, 171, 0.5);
+}
+
+/* Karusellpilar */
+.carousel_prev,
+.carousel_next
+/*#carousel::before,
+#carousel::after*/ {
+	border: 2px solid #D34ACF; /* neonlila */
+	background-color: rgba(0, 0, 0, 0.4); /* lätt mörk ton för bättre kontrast */
+	box-shadow: 0 0 10px #D34ACF;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+	.carousel_prev:hover,
+	.carousel_next:hover
+/*#carousel::before:hover,
+#carousel::after:hover*/ {
+	transform: translateY(-50%) scale(1.08);
+	box-shadow: 0 0 24px #F94CFB, 0 0 12px #D34ACF;
+	background-color: rgba(30, 0, 40, 0.6); /* ännu tydligare vid hover */
 }
