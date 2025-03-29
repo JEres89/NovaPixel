@@ -1,5 +1,5 @@
 /* =============================
-   carousel.css - Karusellens layout, snapping, media queries
+   carousel.css - Carousel layout, snapping, media queries
    ============================= */
 
 * {
@@ -97,6 +97,11 @@
 		overflow: auto;
 	}
 
+	@keyframes fadeIn {
+		from { opacity: 0; transform: translateY(20px); }
+		to { opacity: 1; transform: translateY(0); }
+	}	
+
 @media (min-width: 1024px) {
 	.carousel_case {
 		flex-direction: row-reverse;
@@ -170,7 +175,7 @@
 }
 
 /* =============================
-   Färger och stil för karusell
+   Colors and style for carousel
    ============================= */
 
 .carousel_case {
@@ -178,7 +183,59 @@
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Slide-bakgrunder */
+/* Slide-backgrounds */
+
+#case0 {
+	background: linear-gradient(145deg, rgba(35, 41, 46, 0.8), rgba(72, 169, 230, 0.4));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+  }
+  
+  .intro-box {
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 2.5rem;
+	border-radius: 20px;
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+	max-width: 800px;
+	margin: auto;
+	animation: fadeIn 1.2s ease-in-out;
+	text-align: left;
+  }
+  
+  .intro-box h2 {
+	font-size: 2.5rem;
+	color: #48A9E6;
+	margin-bottom: 1rem;
+	text-shadow: 0 0 10px rgba(72, 169, 230, 0.6);
+  }
+  
+  .intro-box .subheading {
+	overflow: hidden;
+	white-space: nowrap;
+	width: fit-content;
+	margin: 0 auto 1.5rem auto;
+	color: #ff33cc;
+	font-weight: 700;
+	font-size: 1.1rem;
+	letter-spacing: 0.5px;
+	position: relative;
+	text-shadow: 0 0 1px #ff33cc;
+	padding: 0.2rem 0.5rem;
+	border-radius: 5px;
+	animation: typing 4s steps(40, end) forwards;
+  }
+  
+  
+  .intro-box .description {
+	color: #f0f0f0;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin-bottom: 0.8rem;
+  }
+
 #case1 {
 	background: rgba(25, 28, 32, 0.75);
 }
@@ -199,13 +256,13 @@
 	background: rgba(183, 90, 171, 0.5);
 }
 
-/* Karusellpilar */
+/* Carousel arrows */
 .carousel_prev,
 .carousel_next
 /*#carousel::before,
 #carousel::after*/ {
-	border: 2px solid #D34ACF; /* neonlila */
-	background-color: rgba(0, 0, 0, 0.4); /* lätt mörk ton för bättre kontrast */
+	border: 2px solid #D34ACF; 
+	background-color: rgba(0, 0, 0, 0.4); 
 	box-shadow: 0 0 10px #D34ACF;
 	transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
@@ -216,5 +273,11 @@
 #carousel::after:hover*/ {
 	transform: translateY(-50%) scale(1.08);
 	box-shadow: 0 0 24px #F94CFB, 0 0 12px #D34ACF;
-	background-color: rgba(30, 0, 40, 0.6); /* ännu tydligare vid hover */
+	background-color: rgba(30, 0, 40, 0.6); /* more visible on hover */
 }
+
+@keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+  }
+  
