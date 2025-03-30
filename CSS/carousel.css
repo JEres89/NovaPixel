@@ -98,9 +98,9 @@
 	overflow: hidden;
 }
 
-	.carousel_case > article {
-		overflow: auto;
-	}
+.carousel_case > article {
+	overflow: auto;
+}
 
 	@keyframes fadeIn {
 		from { opacity: 0; transform: translateY(20px); }
@@ -124,16 +124,21 @@
 			flex: 50%;
 			margin: auto;
 		}
-	
+
 		.carousel_case > div {
 			max-width: 50%;
-			margin: auto;
+			max-height: 100%;
 			margin-right: 5rem;
+			align-content: center;
+			flex: 1 1 50%;
 		}
-	
-		.carousel_case > div > img {
-			max-width: 100%;
-		}
+
+			.carousel_case > div > img {
+				max-width: 100%;
+				object-fit: contain;
+				border-radius: 12px;
+				max-height: 100%;
+			}
 	}
 	
 	@media (max-width: 1023px) {
@@ -146,20 +151,20 @@
 			flex-direction: column;
 			padding-top: 0rem;
 		}
-
-			#case0 .intro-box {
-				margin: 1rem 2rem;
-				max-width: 95%;
-				padding: 1.5rem 2.5rem;
-				box-sizing: border-box;
-			}
+	
+		#case0 .intro-box {
+			margin: 1rem 2rem;
+			max-width: 95%;
+			padding: 1.5rem 2.5rem;
+			box-sizing: border-box;
+		}
 	
 		#case0 .subheading {
 			white-space: normal;
 			animation: none;
 			width: 100%;
 		}
-	
+
 		.carousel_case > article {
 			margin: 2rem 1.5rem 1rem 2rem;
 			flex: calc(50% - 3rem);
@@ -192,7 +197,7 @@
 			text-align: left;
 			margin-bottom: 0.5rem;
 		}
-	
+
 		.carousel_case > div {
 			min-height: 200px;
 			flex: 1 1 50%;
@@ -202,7 +207,7 @@
 			max-height: 100%;
 			max-width: 100%;
 		}
-	}	
+	}
 
 /* =============================
    Colors and style for carousel
