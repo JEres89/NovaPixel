@@ -1,0 +1,313 @@
+/* =============================
+   carousel.css - Carousel layout, snapping, media queries
+   ============================= */
+
+* {
+	-ms-overflow-style: none;
+	box-sizing: border-box;
+}
+
+#carousel {
+	top: 200px;
+	left: 0;
+	right: 0;
+	bottom: 50px;
+	position: absolute;
+}
+
+	#carousel > ol {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		list-style: none;
+		position: absolute;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		scroll-behavior: smooth;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	/* Hide scrollbar for IE and Edge */
+	#carousel > ol::-webkit-scrollbar {
+		display: none;
+	}	
+
+	#carousel::before,
+	#carousel::after {
+		content: '';
+		z-index: 1;
+		background-color: rgb(255 255 255 / 50%);
+		background-size: 1.5rem 1.5rem;
+		background-repeat: no-repeat;
+		background-position: center center;
+		line-height: 4rem;
+		text-align: center;
+		pointer-events: none;
+		position: absolute;
+		top: 50%;
+		width: 4rem;
+		height: 4rem;
+		transform: translateY(-50%);
+		border-radius: 50%;
+		font-size: 0;
+	}
+
+	#carousel::before {
+		left: 2rem;
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+	}
+
+	#carousel::after {
+		right: 2rem;
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+	}
+
+.carousel_prev,
+.carousel_next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	width: 4rem;
+	height: 4rem;
+}
+
+.carousel_prev {
+	left: 0rem;
+}
+
+.carousel_next {
+	right: 0rem;
+}
+
+.carousel_case {
+	scroll-snap-stop: always;
+	scroll-snap-align: center;
+	margin: 0 2rem;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	flex: 0 0 calc(100% - 4rem);
+	display: flex;
+	flex-wrap: nowrap;
+	overflow: hidden;
+}
+
+	.carousel_case > article {
+		overflow: auto;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; transform: translateY(20px); }
+		to { opacity: 1; transform: translateY(0); }
+	}	
+
+	@media (min-width: 1024px) {
+		.carousel_case {
+			flex-direction: row-reverse;
+		}
+	
+		#case0 {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	
+		.carousel_case > article {
+			text-align: left;
+			padding: 2rem 2rem 2rem 5rem;
+			flex: 50%;
+			margin: auto;
+		}
+	
+		.carousel_case > div {
+			max-width: 50%;
+			margin: auto;
+			margin-right: 5rem;
+		}
+	
+		.carousel_case > div > img {
+			max-width: 100%;
+		}
+	}
+	
+	@media (max-width: 1023px) {
+		.carousel_case {
+			flex-direction: column;
+			padding-top: 1rem;
+		}
+	
+		#case0 {
+			flex-direction: column;
+			padding-top: 0rem;
+		}
+
+			#case0 .intro-box {
+				margin: 1rem 2rem;
+				max-width: 95%;
+				padding: 1.5rem 2.5rem;
+				box-sizing: border-box;
+			}
+	
+		#case0 .subheading {
+			white-space: normal;
+			animation: none;
+			width: 100%;
+		}
+	
+		.carousel_case > article {
+			margin: 2rem 1.5rem 1rem 2rem;
+			flex: calc(50% - 3rem);
+		}
+	
+		.carousel_case > article > h2 {
+			margin-top: 0;
+		}
+	
+		.carousel_case > article > div {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+		}
+	
+		.carousel_case > article > div > p {
+			flex: 0 1 50%;
+		}
+	
+		.carousel_case > article > div > div {
+			flex: 0 1 40%;
+		}
+	
+		.carousel_case > article > div > div > h3 {
+			margin: -0.5em auto 0 auto;
+			height: 1.5em;
+		}
+	
+		.carousel_case > article > div > div > ul > li {
+			text-align: left;
+			margin-bottom: 0.5rem;
+		}
+	
+		.carousel_case > div {
+			min-height: 200px;
+			flex: 1 1 50%;
+		}
+	
+		.carousel_case > div > img {
+			max-height: 100%;
+			max-width: 100%;
+		}
+	}	
+
+/* =============================
+   Colors and style for carousel
+   ============================= */
+
+.carousel_case {
+	border-radius: 30px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Slide-backgrounds */
+
+#case0 {
+	background: linear-gradient(145deg, rgba(35, 41, 46, 0.8), rgba(72, 169, 230, 0.4));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+  }
+  
+  .intro-box {
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 2.5rem;
+	border-radius: 20px;
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+	max-width: 800px;
+	margin: auto;
+	animation: fadeIn 1.2s ease-in-out;
+	text-align: left;
+  }
+  
+  .intro-box h2 {
+	font-size: 2.5rem;
+	color: #48A9E6;
+	margin-bottom: 1rem;
+	text-shadow: 0 0 10px rgba(72, 169, 230, 0.6);
+  }
+  
+  .intro-box .subheading {
+	overflow: hidden;
+	white-space: nowrap;
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto 1.5rem auto;
+	color: #ff33cc;
+	font-weight: 700;
+	font-size: 1.1rem;
+	letter-spacing: 0.5px;
+	position: relative;
+	text-shadow: 0 0 1px #ff33cc;
+	padding: 0.2rem 0.5rem;
+	border-radius: 5px;
+	animation: typing 4s steps(40, end) forwards;
+}
+
+  .intro-box .description {
+	color: #f0f0f0;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin-bottom: 0.8rem;
+  }
+
+#case1 {
+	background: rgba(25, 28, 32, 0.75);
+}
+
+#case2 {
+	background: rgba(63, 100, 136, 0.5);
+}
+
+#case3 {
+	background: rgba(197, 92, 183, 0.5);
+}
+
+#case4 {
+	background: rgba(93, 220, 255, 0.5);
+}
+
+#case5 {
+	background: rgba(183, 90, 171, 0.5);
+}
+
+/* Carousel arrows */
+.carousel_prev,
+.carousel_next
+/*#carousel::before,
+#carousel::after*/ {
+	border: 2px solid #D34ACF; 
+	background-color: rgba(0, 0, 0, 0.4); 
+	box-shadow: 0 0 10px #D34ACF;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+	.carousel_prev:hover,
+	.carousel_next:hover
+/*#carousel::before:hover,
+#carousel::after:hover*/ {
+	transform: translateY(-50%) scale(1.08);
+	box-shadow: 0 0 24px #F94CFB, 0 0 12px #D34ACF;
+	background-color: rgba(30, 0, 40, 0.6); /* more visible on hover */
+}
+
+@keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+  }
+  
