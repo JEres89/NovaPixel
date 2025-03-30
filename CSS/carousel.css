@@ -96,19 +96,10 @@
 	display: flex;
 	flex-wrap: nowrap;
 	overflow: hidden;
-	min-height: 600px;
 }
 
 .carousel_case > article {
 	overflow: auto;
-}
-
-.carousel_case > div > img {
-	width: 100%;
-	height: auto;
-	object-fit: contain;
-	aspect-ratio: auto;
-  	display: block;
 }
 
 	@keyframes fadeIn {
@@ -119,7 +110,6 @@
 	@media (min-width: 1024px) {
 		.carousel_case {
 			flex-direction: row-reverse;
-			align-items: stretch;
 		}
 	
 		#case0 {
@@ -131,30 +121,25 @@
 		.carousel_case > article {
 			text-align: left;
 			padding: 2rem 2rem 2rem 5rem;
-			flex: 1 1 50%;
+			flex: 50%;
 			margin: auto;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
 		}
-	
+
 		.carousel_case > div {
-			flex: 1 1 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin-right: 5rem;
-			box-sizing: border-box;
-		}
-	
-		.carousel_case > div > img {
+			max-width: 50%;
 			max-height: 100%;
-			max-width: 100%;
-			object-fit: contain;
-			border-radius: 12px;
-			display: block;
+			margin-right: 5rem;
+			align-content: center;
+			flex: 1 1 50%;
 		}
-	}	
+
+			.carousel_case > div > img {
+				max-width: 100%;
+				object-fit: contain;
+				border-radius: 12px;
+				max-height: 100%;
+			}
+	}
 	
 	@media (max-width: 1023px) {
 		.carousel_case {
@@ -179,14 +164,10 @@
 			animation: none;
 			width: 100%;
 		}
-	
+
 		.carousel_case > article {
 			margin: 2rem 1.5rem 1rem 2rem;
-			flex: 0 0 auto;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			text-align: left;
+			flex: calc(50% - 3rem);
 		}
 	
 		.carousel_case > article > h2 {
@@ -216,22 +197,15 @@
 			text-align: left;
 			margin-bottom: 0.5rem;
 		}
-	
+
 		.carousel_case > div {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			padding: 1rem 2rem;
-			box-sizing: border-box;
+			min-height: 200px;
+			flex: 1 1 50%;
 		}
 	
 		.carousel_case > div > img {
-			width: 100%;
+			max-height: 100%;
 			max-width: 100%;
-			height: auto;
-			object-fit: contain;
-			border-radius: 12px;
-			display: block;
 		}
 	}
 
