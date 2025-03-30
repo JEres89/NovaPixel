@@ -144,14 +144,15 @@
 	
 		#case0 {
 			flex-direction: column;
-			padding-top: 1rem;
+			padding-top: 0rem;
 		}
-	
-		#case0 .intro-box {
-			max-width: 95%;
-			padding: 1.5rem;
-			box-sizing: border-box;
-		}
+
+			#case0 .intro-box {
+				margin: 1rem 2rem;
+				max-width: 95%;
+				padding: 1.5rem 2.5rem;
+				box-sizing: border-box;
+			}
 	
 		#case0 .subheading {
 			white-space: normal;
