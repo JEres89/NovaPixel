@@ -2,80 +2,318 @@
    NovaPixel - Styling för Webbsidan
    ============================= */
 
-/* Grundläggande styling */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: url('../Media/background3.png') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    text-align: center;
-}
+   @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&family=Rubik:wght@300;400;500&display=swap');
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 25px; /* Justera detta värde för att flytta ner navbaren */
-    padding: 10px;
-    background: linear-gradient(90deg, #3F6488, #456D92, #C25BB2, #C95CB7);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    position: relative;
-    z-index: 1;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px 20px;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.navbar a:hover {
-    color: #4873A0; /* Elektrisk blå vid hover */
-    text-shadow: 0px 0px 10px #456D92;
-}
-
-/* Logotypen ovanpå navbar till vänster */
-.logo {
-    position: absolute;
-    left: 15px;
-    top: -5px; /* Flyttar ner logotypen så att den inte ligger för högt */
-    height: 200px; /* Ökar storleken för bättre synlighet */
-    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-    z-index: 2;
-}
-
-/* Hero-sektion */
-.hero {
-    position: absolute;
-    top: 500px; /* Justeras för att matcha bakgrundens text */
-    left: 52%;
-    transform: translateX(-50%);
-    width: 400px; /* Minskar bredden på bakgrunden */
-    background: rgba(35, 41, 46, 0.7); /* Förstärkt svart genomskinlig bakgrund */
-    padding: 15px;
-    border-radius: 10px;
-}
-
-.hero h1 {
-    font-family: 'Barlow', sans-serif; 
-    font-size: 42px;
-    font-weight: lighter;
-    color: #FFFFFF;
-    text-shadow: 0px 0px 15px rgba(35, 41, 46, 0.7);
-    text-align: center;
-    display: block;
-    margin: 0 auto 10px;
-    margin-bottom: 15px;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap');
+   /* ========= GEMENSAMT FÖR ALLA SIDOR ========= */
+   body {
+       margin: 0;
+       font-family: 'Rubik', sans-serif;
+       background: url('../Media/background3.png') no-repeat center center fixed;
+       background-size: cover;
+       color: white;
+       text-align: center;
+   }
+   
+   #nav-placeholder {
+       position: relative;
+       z-index: 1;
+   }
+   
+   .navbar {
+       display: flex;
+       justify-content: flex-end;
+       align-items: center;
+       margin-top: 25px;
+       padding: 10px;
+       background: linear-gradient(90deg, #3F6488, #456D92, #C25BB2, #C95CB7);
+       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+       position: relative;
+       z-index: 1;
+   }
+   
+   .navbar a {
+       color: white;
+       text-decoration: none;
+       font-size: 18px;
+       padding: 10px 20px;
+       transition: color 0.3s ease, text-shadow 0.3s ease;
+   }
+   
+   .navbar a:hover {
+       color: #5DDCFF;
+       text-shadow: 0px 0px 10px #5DDCFF;
+   }
+   
+   .logo {
+       position: absolute;
+       left: 15px;
+       top: -5px;
+       height: 200px;
+       filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+       z-index: 2;
+       cursor: pointer;
+   }
+   
+   .hamburger {
+       display: none;
+   }
+   
+   @media (max-width: 600px) {
+       .hamburger {
+           display: block;
+           position: absolute;
+           right: 20px;
+           top: 25px;
+           font-size: 28px;
+           cursor: pointer;
+           z-index: 2;
+           color: white;
+       }
+   
+       .navbar {
+           display: none;
+           flex-direction: column;
+           background: rgba(0, 0, 0, 0.95);
+           position: absolute;
+           top: 60px;
+           right: 0;
+           left: 0;
+           z-index: 1;
+       }
+   
+       .navbar.active {
+           display: flex;
+       }
+   
+       .navbar.active a {
+           padding: 12px;
+       }
+   }
+   
+   /* ========= SPECIFIKT FÖR INDEXSIDAN ========= */
+   .hero {
+       position: absolute;
+       top: 370px;
+       left: 54%;
+       transform: translateX(-50%);
+       width: 350px;
+       background: rgba(35, 41, 46, 0.7);
+       padding: 15px 10px;
+       border-radius: 10px;
+   }
+   
+   .hero h1 {
+       font-family: 'Barlow', sans-serif;
+       font-size: 42px;
+       font-weight: lighter;
+       color: #FFFFFF;
+       text-shadow: 0px 0px 15px rgba(35, 41, 46, 0.7);
+       text-align: center;
+       margin: 0 0 10px;
+   }
+   
+   .hero p {
+       font-size: 20px;
+       font-style: italic;
+       color: #B75AAB;
+       text-shadow: 0px 0px 10px #872D62;
+       max-width: 400px;
+       margin: auto;
+       text-align: center;
+   }
+   
+   .content {
+       position: absolute;
+       bottom: 25px;
+       left: 25px;
+       max-width: 600px;
+       text-align: left;
+       font-family: 'Rubik', sans-serif;
+       background: rgba(25, 28, 32, 0.75);
+       padding: 10px 20px;
+       border-radius: 8px;
+       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+   }
+   
+   h2 {
+       font-family: 'Barlow', sans-serif;
+       font-size: 26px;
+       color: #5DDCFF;
+       border-bottom: 2px solid #C25BB2;
+       display: inline-block;
+       padding-bottom: 5px;
+       text-shadow: 0px 0px 10px rgba(93, 220, 255, 0.5);
+   }
+   
+   strong,
+   .linkedin-text {
+       font-weight: 500;
+       letter-spacing: 0.3px;
+   }
+   
+   .btn {
+       background: #3F6080;
+       color: white;
+       padding: 12px 24px;
+       border: none;
+       font-size: 16px;
+       cursor: pointer;
+       transition: all 0.3s ease;
+       box-shadow: 0px 0px 10px #456D92;
+       border-radius: 6px;
+       font-family: 'Rubik', sans-serif;
+   }
+   
+   .btn:hover {
+       background: #C95CB7;
+       box-shadow: 0px 0px 15px #C25BB2;
+   }
+   
+   .btn.small-btn {
+       background-color: #3F6488;
+       color: #fff;
+       font-size: 14px;
+       padding: 6px 12px;
+       border: none;
+       border-radius: 8px;
+       cursor: pointer;
+       transition: background-color 0.3s ease, transform 0.2s ease;
+       display: inline-flex;
+       align-items: center;
+       gap: 6px;
+       box-shadow: 0 0 10px rgba(63, 100, 136, 0.3);
+   }
+   
+   .btn.small-btn:hover {
+       background-color: #4873A0;
+       transform: translateY(-2px);
+       box-shadow: 0 0 15px rgba(72, 115, 160, 0.5);
+   }
+   
+   .button-links {
+       display: flex;
+       align-items: center;
+       gap: 25px;
+       margin-top: 10px;
+   }
+   
+   a {
+       color: #5DDCFF;
+       text-decoration: none;
+       transition: all 0.3s ease;
+       font-family: 'Rubik', sans-serif;
+   }
+   
+   a:hover {
+       color: #A1F1FF;
+       text-shadow: 0px 0px 10px #5DDCFF;
+       opacity: 0.85;
+   }
+   
+   /* ========= SPECIFIKT FÖR ABOUT-SIDAN ========= */
+   body.alt-background {
+       background: url('../Media/bakgrund2.webp') no-repeat center center fixed;
+       background-size: cover;
+   }
+   
+   .team-box {
+       max-width: 900px;
+       margin: 100px auto 50px;
+       padding: 40px;
+       background: rgba(25, 28, 32, 0.75);
+       border-radius: 15px;
+       display: flex;
+       flex-direction: column;
+       gap: 40px;
+   }
+   
+   .member {
+       display: flex;
+       align-items: center;
+       gap: 30px;
+       flex-wrap: wrap;
+       justify-content: center;
+   }
+   
+   .member img {
+       width: 200px;
+       height: 200px;
+       object-fit: cover;
+       border-radius: 10px;
+       filter: grayscale(100%);
+       box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+   }
+   
+   .member-info {
+       max-width: 500px;
+       text-align: left;
+       color: white;
+       font-family: 'Rubik', sans-serif;
+   }
+   
+   .member-info p {
+       margin-bottom: 10px;
+       font-size: 16px;
+       line-height: 1.6;
+   }
+   
+   .member-info a {
+       color: #5DDCFF;
+       margin-right: 15px;
+       font-weight: bold;
+       transition: opacity 0.3s ease;
+   }
+   
+   .member-info a:hover {
+       opacity: 0.8;
+       text-shadow: 0 0 8px #5DDCFF;
+   }
+   
+   .cv-popup {
+       display: none;
+       position: fixed;
+       top: 5%;
+       left: 50%;
+       transform: translateX(-50%);
+       background: rgba(30, 30, 30, 0.98);
+       color: white;
+       padding: 20px;
+       border-radius: 12px;
+       box-shadow: 0 0 20px rgba(200, 0, 200, 0.2);
+       z-index: 1000;
+       width: 90%;
+       max-width: 900px;
+       max-height: 90vh;
+       overflow: hidden;
+   }
+   
+   .cv-popup-close {
+       position: absolute;
+       top: 10px;
+       right: 20px;
+       font-size: 28px;
+       cursor: pointer;
+       color: #5DDCFF;
+       background: none;
+       border: none;
+       transition: transform 0.3s ease;
+   }
+   
+   .cv-popup-close:hover {
+       transform: scale(1.2);
+       text-shadow: 0 0 10px #5DDCFF;
+   }
+   
+   .cv-popup iframe {
+       width: 100%;
+       height: 650px;
+       border: none;
+       border-radius: 8px;
+       margin-top: 0;
+   }
 
 /* Contact Styling */
-
+   @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap');
 body.contact {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -150,112 +388,56 @@ a.contact {
 a.contact:hover {
     text-decoration: underline;
 }
-
-/* Underrubrik i rutan under bakgrundens text */
-.hero p {
-    font-size: 20px;
-    font-style: italic;
-    color: #B75AAB;
-    text-shadow: 0px 0px 10px #872D62;
-    max-width: 400px;
-    margin: auto;
-    text-align: center;
-}
-
-/* Content sektion förbättrad */
-.content {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    max-width: 400px;
-    text-align: left;
-    font-family: 'Lato', sans-serif; /* Lämpligt teckensnitt för content */
-    background: rgba(35, 41, 46, 0.6);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Justering av sektionstitlar */
-h2 {
-    font-size: 24px;
-    color: #406488;
-    border-bottom: 2px solid #C25BB2;
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-/* Knappar */
-.btn {
-    background: #3F6080;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0px 0px 10px #456D92;
-}
-
-.btn:hover {
-    background: #C95CB7;
-    box-shadow: 0px 0px 15px #C25BB2;
-}
-
-/* Länkar */
-a {
-    color: #B75AAB;
-    text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-a:hover {
-    color: #4873A0;
-    text-shadow: 0px 0px 10px #872D62;
-}
-
-/* ===== RESPONSIV DESIGN ===== */
-
-/* För surfplattor (mellan 768px och 1024px) */
-@media (max-width: 1024px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero {
-        width: 80%;
-        top: 300px;
-    }
-    .hero h1 {
-        font-size: 36px;
-    }
-    .hero p {
-        font-size: 18px;
-    }
-}
-
-/* För mobiler (max 768px) */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .hero {
-        width: 90%;
-        top: 280px;
-    }
-    .hero h1 {
-        font-size: 30px;
-    }
-    .hero p {
-        font-size: 16px;
-    }
-    .content {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        max-width: 90%;
-        text-align: center;
-    }
-}
+   /* ========= RESPONSIV DESIGN ========= */
+   @media (max-width: 1024px) {
+       .hero {
+           width: 80%;
+           top: 300px;
+       }
+       .hero h1 {
+           font-size: 36px;
+       }
+       .hero p {
+           font-size: 18px;
+       }
+       .team-box {
+           padding: 20px;
+       }
+       .content {
+           left: 20px;
+           bottom: 30px;
+           max-width: 90%;
+       }
+   }
+   
+   @media (max-width: 768px) {
+       .hero {
+           width: 90%;
+           top: 280px;
+       }
+       .hero h1 {
+           font-size: 30px;
+       }
+       .hero p {
+           font-size: 16px;
+       }
+       .content {
+           left: 10px;
+           right: 10px;
+           max-width: 95%;
+           bottom: 20px;
+           padding: 10px 15px;
+       }
+       .member {
+           flex-direction: column;
+           align-items: center;
+       }
+       .member img {
+           width: 150px;
+           height: 150px;
+       }
+       .member-info {
+           text-align: center;
+       }
+   }
+   

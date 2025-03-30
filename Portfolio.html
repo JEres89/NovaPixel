@@ -2,35 +2,133 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
-	<link rel="stylesheet" type="text/css" href="carousel.css" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NovaPixel - Portfolio</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link rel="stylesheet" type="text/css" href="css/carousel.css" />
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
-<body>
-
-    <div id="carousel">
+<body class="alt-background">
+	<!-- Navigation bar -->
+	<div id="nav-placeholder"></div>
+	<script>
+	  $(function () {
+		$("#nav-placeholder").load("navBar.html");
+	  });
+	</script>
+	<!-- End of Navigation bar -->
+	
+	<div id="carousel">
 		<ol>
 			<!--<li id="leftcase">
 			</li>-->
+			<li id="case0" class="carousel_case">
+				<a href="#case3" class="carousel_prev" title="Go to last slide"></a>
+				<a href="#case1" class="carousel_next" title="Go to next slide"></a>
+			  
+				<article class="intro-box">
+				  <h2>NovaPixel Portfolio</h2>
+
+				  <p class="subheading">
+					<br><strong>VI SKAPAR&emsp; - &emsp;BYGGER&emsp; - &emsp;UTFORSKAR&emsp; - &emsp;FÖRVERKLIGAR.</strong><br><br>
+				  </p>
+				  <p class="description">
+					Vi är NovaPixel – ett kreativt team av kodare, designers och digitala upptäcktsresande.  
+					Vi bygger inte bara webbplatser. Vi designar upplevelser. Vi utvecklar system som klickar – med både användare och teknik.
+				  </p>
+				  
+				  <p class="description">
+					Från pixelperfekt frontend till kraftfull backend, från speldesign till systemintegration – vi älskar att utforska nya världar inom kod.
+				  </p>
+				  
+				  <p class="description">
+					Här visar vi ett urval av våra projekt. Varje lösning är unik, men alla bär samma signatur: <strong>kod som möter kreativitet.</strong>
+				  </p>
+				  
+				</article>
+			  </li>
+					  
 			<li id="case1" class="carousel_case">
-				<a href="#case4" class="carousel_prev">Go to last slide</a>
-				<a href="#case2" class="carousel_next">Go to next slide</a>
+				<a href="#case0" class="carousel_prev" title="Go to last slide"></a>
+				<a href="#case2" class="carousel_next" title="Go to next slide"></a>
+				<div>
+					<img src="./Media/restful_api.png" alt="RESTful API illustration">
+				</div>
+				<article>
+					<h2>RESTful API with ASP.NET Core</h2>
+					<div>
+						<p>
+							Developed a robust and scalable RESTful API using ASP.NET Core. The API serves as the backend for a fitness tracking application, handling user authentication, workout logging, and progress tracking. Leveraging Entity Framework Core, the API efficiently manages data across multiple tables, ensuring fast and secure transactions.
+						</p>
+						<div>
+							<h3>Key Highlights</h3>
+							<ul>
+								<li>Implemented JWT-based authentication for secure access.</li>
+								<li>Utilized Swagger for comprehensive API documentation.</li>
+								<li>Integrated Azure Application Insights for monitoring and performance analysis.</li>
+							</ul>
+						</div>
+					</div>
+				</article>
 			</li>
 			<li id="case2" class="carousel_case">
-				<a href="#case1" class="carousel_prev">Go to last slide</a>
-				<a href="#case3" class="carousel_next">Go to next slide</a>
+				<a href="#case1" class="carousel_prev" title="Go to previous slide"></a>
+				<a href="#case3" class="carousel_next" title="Go to next slide"></a>
+				<div>
+					<img src="./Media/wpf_inventory_manager.png" alt="WPF application illustration" />
+				</div>
+				<article>
+					<h2>WPF Desktop Application - Inventory Manager</h2>
+					<div>
+						<p>
+							Designed and developed a desktop application using WPF for small business inventory management. The application enables users to track stock levels, update product details, and generate comprehensive sales reports. It features an intuitive UI with data visualization charts for better insights.
+						</p>
+						<div>
+							<h3>Key Highlights</h3>
+							<ul>
+								<li>Integrated MVVM architecture for clean and maintainable code.</li>
+								<li>Added real-time data synchronization with a local SQL database.</li>
+								<li>Incorporated drag-and-drop functionality for efficient item management.</li>
+							</ul>
+						</div>
+					</div>
+				</article>
 			</li>
 			<li id="case3" class="carousel_case">
-				<a href="#case2" class="carousel_prev">Go to last slide</a>
-				<a href="#case4" class="carousel_next">Go to next slide</a>
+				<a href="#case2" class="carousel_prev" title="Go to previous slide"></a>
+				<a href="#case0" class="carousel_next" title="Go to first slide"></a>
+				<div>
+					<img src="./Media/fashion_boutique.png" alt="Fashion boutique Web-store illustration" />
+				</div>
+				<article>
+					<h2>Frontend Web-store - Fashion Boutique</h2>
+					<div>
+						<p>
+							Created an engaging and modern web-store interface for an online fashion boutique. The design emphasizes product visuals and seamless navigation, featuring dynamic filters, animations, and user-friendly layouts. Built using HTML5, CSS3, and JavaScript frameworks like React for optimal performance.
+						</p>
+						<div>
+							<h3>Key Highlights</h3>
+							<ul>
+								<li>Implemented responsive design for consistent performance across devices.</li>
+								<li>Enhanced UX with interactive product carousels and dynamic search.</li>
+								<li>Integrated payment gateway APIs for secure transactions.</li>
+							</ul>
+						</div>
+					</div>
+				</article>
+				<!--<a href="#case3" class="carousel_next" title="Go to next slide"></a>-->
+			</li>
+			<!--<li id="case3" class="carousel_case">
+				<a href="#case2" class="carousel_prev" title="Go to previous slide"></a>
+				<a href="#case4" class="carousel_next" title="Go to next slide"></a>
 			</li>
 			<li id="case4" class="carousel_case">
-				<a href="#case3" class="carousel_prev">Go to last slide</a>
-				<a href="#case1" class="carousel_next">Go to next slide</a>
-			</li>
+				<a href="#case3" class="carousel_prev" title="Go to previous slide"></a>
+			</li>-->
 			<!--<li id="rightcase">
 			</li>-->
 		</ol>
-    </div>
+	</div>
 </body>
 </html>
