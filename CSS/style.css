@@ -311,7 +311,83 @@
        border-radius: 8px;
        margin-top: 0;
    }
-   
+
+/* Contact Styling */
+   @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap');
+body.contact {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('../Media/bakgrund2r.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+  }
+div.centering {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container-contact {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+h2.contact {
+    margin-bottom: 20px;
+}
+form.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+label.contact {
+    text-align: left;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+input.contact, textarea.contact, button.contact {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button.contact {
+    margin-top: 15px;
+    background-color: #0073b1;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button.contact:hover {
+    background-color: #005582;
+}
+.linkedin-links-contact {
+    margin-top: 20px;
+}
+ul.contact {
+    margin: 5px 0;
+    background-color: #000000AA;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 5px;
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+a.contact {
+    text-decoration: none;
+    color: #0073b1;
+}
+a.contact:hover {
+    text-decoration: underline;
+}
    /* ========= RESPONSIV DESIGN ========= */
    @media (max-width: 1024px) {
        .hero {
