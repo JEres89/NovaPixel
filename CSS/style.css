@@ -134,16 +134,14 @@ button.contact:hover {
     margin-top: 20px;
 }
 ul.contact {
-    align-items: center;
-    list-style-type: none;
-    padding: 0;
-}
-li.contact {
     margin: 5px 0;
     background-color: #000000AA;
     margin-left: 25%;
     margin-right: 25%;
     border-radius: 5px;
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
 }
 a.contact {
     text-decoration: none;
