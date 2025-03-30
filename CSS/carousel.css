@@ -96,11 +96,20 @@
 	display: flex;
 	flex-wrap: nowrap;
 	overflow: hidden;
+	min-height: 600px;
 }
 
-	.carousel_case > article {
-		overflow: auto;
-	}
+.carousel_case > article {
+	overflow: auto;
+}
+
+.carousel_case > div > img {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	aspect-ratio: auto;
+  	display: block;
+}
 
 	@keyframes fadeIn {
 		from { opacity: 0; transform: translateY(20px); }
@@ -110,6 +119,7 @@
 	@media (min-width: 1024px) {
 		.carousel_case {
 			flex-direction: row-reverse;
+			align-items: stretch;
 		}
 	
 		#case0 {
@@ -121,20 +131,30 @@
 		.carousel_case > article {
 			text-align: left;
 			padding: 2rem 2rem 2rem 5rem;
-			flex: 50%;
+			flex: 1 1 50%;
 			margin: auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 		}
 	
 		.carousel_case > div {
-			max-width: 50%;
-			margin: auto;
+			flex: 1 1 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			margin-right: 5rem;
+			box-sizing: border-box;
 		}
 	
 		.carousel_case > div > img {
+			max-height: 100%;
 			max-width: 100%;
+			object-fit: contain;
+			border-radius: 12px;
+			display: block;
 		}
-	}
+	}	
 	
 	@media (max-width: 1023px) {
 		.carousel_case {
@@ -146,13 +166,13 @@
 			flex-direction: column;
 			padding-top: 0rem;
 		}
-
-			#case0 .intro-box {
-				margin: 1rem 2rem;
-				max-width: 95%;
-				padding: 1.5rem 2.5rem;
-				box-sizing: border-box;
-			}
+	
+		#case0 .intro-box {
+			margin: 1rem 2rem;
+			max-width: 95%;
+			padding: 1.5rem 2.5rem;
+			box-sizing: border-box;
+		}
 	
 		#case0 .subheading {
 			white-space: normal;
@@ -162,7 +182,11 @@
 	
 		.carousel_case > article {
 			margin: 2rem 1.5rem 1rem 2rem;
-			flex: calc(50% - 3rem);
+			flex: 0 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: left;
 		}
 	
 		.carousel_case > article > h2 {
@@ -194,15 +218,22 @@
 		}
 	
 		.carousel_case > div {
-			min-height: 200px;
-			flex: 1 1 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 1rem 2rem;
+			box-sizing: border-box;
 		}
 	
 		.carousel_case > div > img {
-			max-height: 100%;
+			width: 100%;
 			max-width: 100%;
+			height: auto;
+			object-fit: contain;
+			border-radius: 12px;
+			display: block;
 		}
-	}	
+	}
 
 /* =============================
    Colors and style for carousel
