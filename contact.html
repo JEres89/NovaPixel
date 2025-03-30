@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakta oss</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="contact">
+<!--Navigation bar-->
+<div id="nav-placeholder"></div>
+<script>
+    $(function(){
+      $("#nav-placeholder").load("navBar.html");
+    });
+</script>
+<!--end of Navigation bar-->
+<div class="centering">
+  <div class="container-contact">
+    <div>
+     <h2 class="contact">Kontakta Oss (Inte implementerat)</h2>
+        <form class="contact" action="#" method="post">
+          <label class="contact" for="name">Namn</label>
+          <input class="contact" type="text" id="name" name="name" required>
+          
+          <label class="contact" for="email">Email</label>
+          <input class="contact" type="email" id="email" name="email" required>
+          
+          <label class="contact" for="message">Meddelande</label>
+          <textarea class="contact" id="message" name="message" rows="5" required></textarea>
+          
+          <button class="contact" type="submit">Skicka Meddelande (Inte implementerat)</button>
+        </form>
+      <div class="linkedin-links-contact">
+          <h3>Connect with us</h3>
+          <ul class="contact">
+              <li><a class="contact" href="https://www.linkedin.com/in/tinalagesson55/" target="_blank"><img style="height: 20px;" src="./Media/link.png" /> Tina Lagesson</a></li>
+              <li><a class="contact" href="https://www.linkedin.com/in/jens-eresund-958654163/" target="_blank"><img style="height: 20px;" src="./Media/link.png" /> Jens Eresund</a></li>
+              <li><a class="contact" href="https://www.linkedin.com/in/andreas-lind-sahlin-ab332460/" target="_blank"><img style="height: 20px;" src="./Media/link.png" /> Andreas Lind-Sahlin</a></li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>
+</body>
+</html>
